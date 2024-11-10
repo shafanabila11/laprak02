@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sembunyikan Konten dan Ubah Mode Tampilan</title>
+    <style>
+        .rapih {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+        .berantakan {
+            font-family: Comic Sans MS, cursive;
+            color: red;
+            background-color: yellow;
+        }
+        .content {
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .jawaban {
+            display: block; /* Jawaban akan muncul secara default */
+        }
+    </style>
+</head>
+<body>
+    <button onclick="toggleMode('rapih')">Mode Rapih</button>
+    <button onclick="toggleMode('berantakan')">Mode Berantakan</button>
+
+    <h1>LAPORAN TEORI</h1>
+
+    <h2>SHAFA NABILA AZ ZAHRA 202331228</h2>
+
+    <h3 class="content" onclick="toggleContent(this)">1. Mengapa menggunakan CSS dan JavaScript dalam pemrograman web?</h3>
+    <div class="jawaban">
+        <p>Jawab : Javascript adalah bahasa pemrograman (berjalan pada web browser) yang digunakan untuk membuat halaman web yang lebih interaktif. Dengan javascript, kita bisa membuat banyak fitur pada halaman web. Javascript memungkinkan kita untuk mendeteksi dan menindaklanjuti prilaku pengunjung (events) pada halaman web. Contoh penerapan javascript seperti misalnya menampilkan elemen tertentu hanya pada browser tertentu saja, membuat fitur yang memungkinkan pengguna untuk dapat menyesuaikan ukuran font pada blog, dan lain sebagainya. CSS (Cascading Style Sheet) adalah bahasa yang digunakan untuk mengatur tampilan (gaya) elemen-elemen HTML. Dengan CSS, kita dapat memberikan warna background, border, mengatur posisi elemen, ukuran font dan lain sebagainya.</p>
+    </div>
+
+    <h3 class="content" onclick="toggleContent(this)">2. Bagaimana CSS dan JavaScript dapat diintegrasikan dalam pemrograman web?</h3>
+    <div class="jawaban">
+        <p>Jawab : Penggunaan CSS untuk mengubah tampilan elemen yang diatur oleh JavaScript bisa dilakukan dengan menetapkan kelas atau ID pada elemen tersebut dan kemudian mengubah properti CSS mereka melalui JavaScript. Sebagai contoh, saat pengguna melakukan klik pada tombol, JavaScript dapat mengubah kelas elemen tersebut, dan CSS kemudian akan diterapkan untuk mengubah tampilan elemen sesuai dengan gaya yang ditentukan. Integrasi ketiga bahasa pemrograman ini memungkinkan pembangunan website yang tidak hanya informatif, tetapi juga menarik dan interaktif sesuai dengan kebutuhan pengembang dan preferensi pengguna.</p>
+    </div>
+
+    <h3 class="content" onclick="toggleContent(this)">3. Jelaskan apa saja keuntungan menggunakan JavaScript dan CSS?</h3>
+    <div class="jawaban">
+        <p>Jawab : 
+            • Dengan menggunakan JavaScript, web browser akan dapat langsung menginterpretasikan script yang telah dibuat secara otomatis melalui HTML. 
+            • Bahasa pemrograman JavaScript mudah dipahami oleh para web developer, termasuk fresh graduate atau orang yang baru berkecimpung di dunia web developer. 
+            • Penanganan error menjadi lebih mudah, sehingga ketika terjadi error, web developer dapat langsung menemukan dan memperbaikinya.</p>
+    </div>
+
+    <h3 class="content" onclick="toggleContent(this)">4. Jelaskan apa saja keuntungan menggunakan Bootstrap?</h3>
+    <div class="jawaban">
+        <p>Jawab : 
+            • Ramah untuk Pemula
+            Meskipun baru memahami dasar HTML, CSS, dan JavaScript, Anda sudah dapat menggunakan Bootstrap untuk membuat website. Alasannya, sudah tersedia berbagai elemen dan class yang bisa langsung Anda pakai. Inilah yang membuat Bootstrap ramah untuk pemula. 
+            
+            • Grid System yang Canggih
+            Dengan grid system, membuat website yang responsive bukan hal sulit lagi. Semua elemen di dalam website bisa dibuat menyesuaikan dengan perangkat yang digunakan oleh pengunjung.</p>
+    </div>
+
+    <h3 class="content" onclick="toggleContent(this)">5. Berikan salah satu contoh penggunaan Bootstrap lalu jelaskan apa fungsinya serta berikan screenshot hasil running di web-nya!</h3>
+    <div class="jawaban">
+        <p>Jawab : 
+            Bootstrap adalah sebuah kerangka kerja CSS yang dirancang untuk memudahkan pengembangan formulir HTML. Dengan menggunakan Bootstrap, kita bisa membuat formulir yang tampilannya
+            menarik, responsif, dan mudah digunakan, tanpa perlu menulis banyak kode CSS dari awal.
+        </p>
+    </div>
+
+    <script>
+        function toggleContent(soalElement) {
+            const jawaban = soalElement.nextElementSibling;
+            const isJawabanHidden = jawaban.style.display === "none";
+            
+            if (isJawabanHidden) {
+                alert("Apakah Anda ingin menampilkan jawaban? Klik OK untuk menyembunyikan.");
+                jawaban.style.display = "block"; // Menampilkan jawaban
+            } else {
+                alert("Apakah Anda ingin menyembunyikan jawaban? Klik OK untuk menyembunyikan.");
+                jawaban.style.display = "none"; // Menyembunyikan jawaban
+            }
+        }
+
+        function toggleMode(mode) {
+            const body = document.body;
+            if (mode === 'rapih') {
+                body.className = 'rapih'; // Mengubah mode tampilan menjadi rapih
+            } else {
+                body.className = 'berantakan'; // Mengubah mode tampilan menjadi berantakan
+            }
+        }
+    </script>
+</body>
+</html>
